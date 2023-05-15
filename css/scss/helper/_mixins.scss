@@ -1,0 +1,10 @@
+@mixin value-prefixer(
+  $property,
+  $value,
+  $prefixes: ()
+) {
+  @each $prefix in $prefixes {
+    #{$property}: #{"-" + $prefix + "-" + $value};
+  }
+  #{$property}: $value;
+}
